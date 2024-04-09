@@ -5,29 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="/nofificationStyle.css">
+  <link rel="stylesheet" href="src/style.css">
+  <link rel="stylesheet" href="nofificationStyle.css">
 </head>
 <body>
   <script>
     function repeat(node, amount) {[...Array(amount - 1)].forEach(_ => node.parentNode.insertBefore(node.cloneNode(true), node));}    
   </script>
   
-  <script src="/vanillaJSX.js"></script>
-  <script src="/yetiLib.js"></script>
+  <script src="vanillaJSX.js"></script>
+  <script src="yetiLib.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <script defer type="text/babel" src="graphRenderer.js"></script>
+  <script defer type="text/babel" src="src/graphRenderer.js"></script>
   
-  <script defer src="/notificationSystem.js"></script>
+  <script defer src="notificationSystem.js"></script>
   <script defer>//const notis = new Notifications(document.querySelector(".notifications"))</script>
 
-  <script defer type="text/babel" src="script.js"></script>
+  <script defer type="text/babel" src="src/script.js"></script>
 
-  <script defer type="text/babel" src="pageDispo.js"></script>
-  <script defer type="text/babel" src="pageOpenFile.js"></script>
-  <script defer type="text/babel" src="pagePersonSelect.js"></script>
-  <script defer type="text/babel" src="pagePersonDetailed.js"></script>
-  <script defer type="text/babel" src="theActualThing.js"></script>
+  <script defer type="text/babel" src="src/pageDispo.js"></script>
+  <script defer type="text/babel" src="src/pageOpenFile.js"></script>
+  <script defer type="text/babel" src="src/pagePersonSelect.js"></script>
+  <script defer type="text/babel" src="src/pagePersonDetailed.js"></script>
+  <script defer type="text/babel" src="src/theActualThing.js"></script>
 
   <script defer type="text/babel">
     const softwareVersion="dashboard";
@@ -38,7 +38,7 @@
   <div class="notifications"></div>
 
   <header>
-    <img class="logo" src="/images/Logo-couleur.png" alt="logo">
+    <img class="logo" src="images/Logo-couleur.png" alt="logo">
     
     <nav>
       <div class="navtab" onclick="selectTab(this)" data-tab="med">Médecins</div>
@@ -67,7 +67,7 @@
       <div class="experiencetitle">Experience</div>
       <div class="info">
         <div class="image">
-          <img src="/images/SBoyerPFP.png" alt="">
+          <img src="images/SBoyerPFP.png" alt="">
         </div>
         <div class="name">Dr. Suzanne Boyer</div>
         <div class="role">Medecin</div>
