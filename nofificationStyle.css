@@ -1,0 +1,168 @@
+:root {
+  --normalaccent: var(--accent);
+  --normalborder: #e4e4e4;
+  --normalfill: white;
+  --normaltitle: black;
+  --normaldesc: #5e5e5e;
+  --normalglow: var(--light-accent);
+  --normalborderglow: var(--accent);
+
+  --warningaccent: #E6AD18;
+  --warningborder: #F2E8B6;
+  --warningfill: #F5F0D9;
+  --warningtitle: black;
+  --warningdesc: #5e5e5e;
+  --warningglow: #ECCA65;
+  --warningborderglow: #ECCA65;
+
+  --erroraccent: #C71D12;
+  --errorborder: #E0BAB8;
+  --errorfill: #F0D9D7;
+  --errortitle: black;
+  --errordesc: #5e5e5e;
+  --errorglow: #D36A63;
+  --errorborderglow: #D36A63;
+}
+.noti.normal {
+  --notiaccent: var(--normalaccent);
+  --notiborder: var(--normalborder);
+  --notifill: var(--normalfill);
+  --notititle: var(--normaltitle);
+  --notidesc: var(--normaldesc);
+  --notiglow: var(--normalglow);
+  --notiborderglow: var(--normalborderglow);
+}
+.noti.warning {
+  --notiaccent: var(--warningaccent);
+  --notiborder: var(--warningborder);
+  --notifill: var(--warningfill);
+  --notititle: var(--warningtitle);
+  --notidesc: var(--warningdesc);
+  --notiglow: var(--warningglow);
+  --notiborderglow: var(--warningborderglow);
+}
+.noti.error {
+  --notiaccent: var(--erroraccent);
+  --notiborder: var(--errorborder);
+  --notifill: var(--errorfill);
+  --notititle: var(--errortitle);
+  --notidesc: var(--errordesc);
+  --notiglow: var(--errorglow);
+  --notiborderglow: var(--errorborderglow);
+}
+
+.notifications {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 22rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  margin: 0.5rem;
+  z-index: 90;
+  isolation: isolate;
+}
+
+.noti {
+  position: relative;
+  height: 0;
+  transition: height 300ms ease;
+  flex-shrink: 0;
+  opacity: 1;
+}
+.noti.out {animation: notiOut 500ms ease forwards}
+@keyframes notiOut {
+  to {height: 0;}
+}
+
+.noticard {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+  width: 22rem;
+  background: var(--notiborder);
+  border-radius: 1rem;
+  overflow: hidden;
+  animation: notiCardIn 500ms ease;
+  box-shadow: white 0 0 0.5rem 0.25rem;
+}
+@keyframes notiCardIn {
+  from {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+}
+.noti.out .noticard {animation: notiCardOut 500ms ease forwards}
+@keyframes notiCardOut {
+  to {
+    opacity: 0;
+    transform: scale(0.5)
+  }
+}
+.noticard:before {
+  position: absolute;
+  content: "";
+  inset: 0.0625rem;
+  border-radius: 0.9375rem;
+  background: var(--notifill);
+  z-index: 2
+}
+.noticard:after {
+  position: absolute;
+  content: "";
+  width: 0.25rem;
+  inset: 0.65rem auto 0.65rem 0.5rem;
+  border-radius: 0.125rem;
+  background: var(--notiaccent);
+  transition: transform 300ms ease;
+  z-index: 4;
+}
+
+.noticard:hover:after {
+  transform: translateX(0.15rem)
+}
+
+.notititle {
+  color: var(--notititle);
+  padding: 0.65rem 0.5rem 0.4rem 1.25rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: transform 300ms ease;
+  z-index: 5;
+}
+.noti:hover .notititle {
+  transform: translateX(0.15rem)
+}
+.notidesc {
+  color: var(--notidesc);
+  padding: 0 0.5rem 0.85rem 1.25rem;
+  transition: transform 300ms ease;
+  z-index: 5;
+}
+.noti:hover .notidesc {
+  transform: translateX(0.25rem)
+}
+
+.notiglow, .notiborderglow {
+  position: absolute;
+  width: 20rem;
+  height: 20rem;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.notiglow {
+  z-index: 3;
+  background: radial-gradient(circle closest-side at center, var(--notiglow), transparent);
+}
+.notiborderglow {
+  z-index: 1;
+  background: radial-gradient(circle closest-side at center, var(--notiborderglow), transparent);
+}
+
+.noti:hover .notiglow {opacity: 0.2}
+.noti:hover .notiborderglow {opacity: 0.4}
