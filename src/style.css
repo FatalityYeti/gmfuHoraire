@@ -1,0 +1,730 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+:root {
+  --accent: #0E5833;
+  --light-accent: #B8E0CC;
+  --light-accent-border: #afc3b9;
+  --lighter-accent: #d7f0e4;
+  font-family: "Inter";
+}
+
+*, *:before, *:after {
+  flex-shrink: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+body {
+  margin: 0;
+  overflow-x: hidden;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 4rem;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 10px;
+  z-index: 100;
+}
+
+.logo {
+  margin-left: 0.5rem;
+  height: 4rem;
+}
+header > div, header > nav {
+  display: flex;
+  align-items: center;
+  user-select: none;
+  height: 100%;
+}
+
+.navtab {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  cursor: pointer;
+  position: relative;
+}
+.navtab.active:after {
+  inset: auto 0.5rem 0 0.5rem;
+  height: 0.375rem;
+  position: absolute;
+  content: "";
+  border-radius: 0.5rem 0.5rem 0 0;
+  background: var(--accent);
+}
+
+.navsave {
+  background: white;
+  color: var(--accent);
+  margin-right: 0.625rem;
+  height: 2.75rem;
+  width: 2.75rem;
+  display: grid;
+  place-content: center;
+  border-radius: 0.75rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 10px;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+.navbutton {
+  background: var(--accent);
+  color: white;
+  margin-right: 0.625rem;
+  height: 2.75rem;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  border-radius: 0.75rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 10px;
+  cursor: pointer;
+}
+#pagecontent {
+  display: contents;
+}
+.peoplepage {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 70rem;
+}
+
+.peopleinfo {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border-radius: 1rem;
+  background: var(--lighter-accent);
+  border: 2px solid var(--accent);
+  text-wrap: wrap;
+  z-index: 5;
+}
+.peopleinfo > .content > .title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.peopleinfo > .content > .text {
+  text-wrap: wrap;
+}
+.peopleinfo > .actions {
+  display: flex;
+  flex-direction: column;
+  margin: 0.25rem 0;
+  gap: 0.75rem;
+}
+.peopleinfo > .actions > .button {
+  background: var(--accent);
+  color: white;
+  height: 2.5rem;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  border-radius: 0.75rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 10px;
+  cursor: pointer;
+}
+
+
+.personsection {
+  width: 100%;
+  padding: 0.5rem;
+  width: min(100%, 70rem);
+  border-radius: 1rem;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 10px;
+}
+.outputs .personsection {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 10px, var(--accent) 0 0 0 2px;
+}
+.peoplepage > .weeksection {
+  position: sticky;
+  top: 5rem;
+  z-index: 4;
+  box-shadow:
+  rgba(0, 0, 0, 0.25) 0px 3px 10px,
+  white 0 -6rem 1rem 5rem
+  !important;
+}
+
+
+
+.personsection > .info {
+  height: 3rem;
+  position: relative;
+  display: grid;
+  gap: -0.5rem;
+  place-content: center;
+  text-align: center;
+}
+.personsection > .info > .name {font-size: 1.5rem;}
+.personsection > .info > .subname {margin-top: -0.125rem;}
+
+.personsection > .info > .state {
+  position: absolute;
+  inset: 0 auto 0 0.25rem;
+  padding-left: 0.75rem;
+  display: flex;
+  align-items: center;
+  color: var(--accent);
+}
+
+.personsection > .info > .state > div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem
+}
+.personsection > .info > .state > div > ion-icon {
+  font-size: 1.5rem;
+}
+.personsection > .info > .actions {
+  position: absolute;
+  inset: 0 0.25rem 0 auto;
+  display: flex;
+  align-items: center;
+}
+.personsection > .info > .actions > .button {
+  background: var(--accent);
+  color: white;
+  margin-left: 0.5rem;
+  height: 2.5rem;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  border-radius: 0.75rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 10px;
+  cursor: pointer;
+}
+
+.grids {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 0.5rem;
+  gap: 0.25rem 0.75rem;
+  user-select: none;
+}
+
+.dispogrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 2rem);
+  grid-auto-flow: column;
+  background: #e4e4e4;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px;
+  border-radius: 0.5rem;
+  gap: 2px;
+  margin-top: 0.25rem;
+}
+.weekgrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 2rem);
+  grid-auto-flow: column;
+  background: #e4e4e4;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px;
+  border-radius: 0.5rem;
+  gap: 2px;
+}
+
+
+input.dispocell {
+  background: white;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  position: relative;
+  font-size: 1rem;
+}
+input.dispocell:focus, input.dispocell.selected {
+  background: var(--lighter-accent);
+  outline: 2px solid var(--accent);
+}
+
+
+.dispocell {
+  --cell-fill-anim: 0;
+  background: white;
+  display: grid;
+  place-content: center;
+  position: relative;
+}
+.dispocell.selected {
+  background: var(--lighter-accent);
+  outline: 2px solid var(--light-accent-border);
+  animation: cell-fill 300ms ease forwards;
+}
+@property --cell-fill-anim {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+@keyframes cell-fill {to {--cell-fill-anim: 1;}}
+/* animation directions */
+.dispocell.selected.right {background: linear-gradient(to right, var(--lighter-accent) calc(var(--cell-fill-anim) * 200% - 100%), white calc(var(--cell-fill-anim) * 150%))}
+.dispocell.selected.down {background: linear-gradient(to bottom, var(--lighter-accent) calc(var(--cell-fill-anim) * 200% - 100%), white calc(var(--cell-fill-anim) * 150%))}
+.dispocell.selected.left {background: linear-gradient(to left, var(--lighter-accent) calc(var(--cell-fill-anim) * 200% - 100%), white calc(var(--cell-fill-anim) * 150%))}
+.dispocell.selected.up {background: linear-gradient(to top, var(--lighter-accent) calc(var(--cell-fill-anim) * 200% - 100%), white calc(var(--cell-fill-anim) * 150%))}
+
+
+.dispocell[data-grey="true"] {
+  background: #f5f5f5 !important;
+}
+.dispocell.selected:after {
+  border-radius: inherit;
+  pointer-events: none;
+  position: absolute;
+  content: "";
+  inset: -2px;
+  border: 2px solid var(--accent);
+}
+/*borders joining*/
+.dispocell.selected + .dispocell:not(:nth-child(3n+1)):after {border-top: none;}
+.dispocell:has(+ .dispocell.selected):not(:nth-child(3n)):after {border-bottom: none;}
+.dispocell.selected + * + * + .dispocell:not(:nth-child(-n +3)):after {border-left: none;}
+.dispocell:has(+ * + * + .dispocell.selected):not(:nth-last-child(-n +3)):after {border-right: none}
+
+.dispocell:nth-child(1):after {border-radius: calc(0.5rem + 2px) 0 0 0}
+.dispocell:nth-last-child(1):after {border-radius: 0 0 calc(0.5rem + 2px) 0}
+.dispogrid > .dispocell:nth-last-child(3):after {border-radius: 0 calc(0.5rem + 2px) 0 0}
+.dispogrid > .dispocell:nth-child(3):after {border-radius: 0 0 0 calc(0.5rem + 2px)}
+
+.dispocell:nth-child(1) {border-radius: 0.5rem 0 0 0}
+.dispocell:nth-last-child(1) {border-radius: 0 0 0.5rem 0}
+.dispogrid > .dispocell:nth-last-child(3) {border-radius: 0 0.5rem 0 0}
+.dispogrid > .dispocell:nth-child(3) {border-radius: 0 0 0 0.5rem}
+.weekgrid > .dispocell:nth-last-child(2) {border-radius: 0 0.5rem 0 0}
+.weekgrid > .dispocell:nth-child(2) {border-radius: 0 0 0 0.5rem}
+
+
+
+.dispocell:has(.editdispo) {
+  background: var(--lighter-accent);
+  outline: 2px solid var(--accent);
+}
+.dispocell:has(ion-icon) {
+  /*color: var(--accent);*/
+  font-size: 1.375rem;
+}
+.dispocell > ion-icon {
+  pointer-events: none;
+  --ionicon-stroke-width: 40px;
+}
+
+.assignedcount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -0.5rem;
+  font-size: 0.875rem;
+  color: #555555
+}
+.periodcount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.periodcount > input {
+  height: 1.75rem;
+  width: 2.5rem;
+  border-radius: 0.375rem;
+  border: 0.125rem solid lightgrey;
+  font-size: 1rem;
+  text-align: center;
+  outline: none;
+}
+.periodcount > input:focus {
+  background: var(--lighter-accent);
+  border: 0.125rem solid var(--accent);
+}
+.periodcount > label {
+  position: relative;
+  height: 1.25rem;
+  width: 1.25rem;
+  margin-left: 0;
+  margin: 0.125rem;
+}
+.periodcount > label > input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.periodcount > label > div {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-content: center;
+  border-radius: 0.375rem;
+  border: 0.125rem solid lightgrey;
+  color: white;
+  background: white;
+}
+.periodcount > label > div {--ionicon-stroke-width: 48px;}
+.periodcount > label > input:checked ~ div {
+  border: none;
+  background: var(--accent);
+}
+
+.personsection > .error {
+  color: #E6AD18;
+  display: grid;
+  place-content: center;
+  padding: 0.25rem;
+}
+
+.personsection > .comments {
+  width: calc(100% - 0.75rem);
+  height: 2rem;
+  margin: 0.375rem 0.375rem 0.25rem 0.375rem;
+  padding: 0.25rem 0.5rem 0.625rem 0.5rem;
+  background: white;
+  border: 2px solid lightgrey;
+  border-radius: 0.5rem;
+  resize: none;
+  overflow: hidden;
+  outline: none;
+  font: inherit;
+}
+.personsection > .comments:focus {
+  background: var(--lighter-accent);
+  border-color: var(--accent)
+}
+
+
+.editdispo {
+  display: grid;
+  position: absolute;
+  inset: 0 auto auto 100%;
+  margin: -2px 0 0 4px;
+  z-index: 100;
+}
+
+.editdispo > .closedispo {
+  position: fixed;
+  inset: 0;
+  background: #00000011;
+}
+
+.editdispo > .dispooptions {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  min-width: 5rem;
+  width: max-content;
+  border-radius: 0.625rem;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px;
+  overflow: hidden;
+  z-index: 1;
+}
+.editdispo > .dispooptions > div {
+  font-size: 1rem;
+  color: black;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer
+}
+
+.editdispo > .dispooptions > div:hover {
+  color: white;
+  background: var(--accent)
+}
+
+.editdispo > .dispooptions > div > ion-icon {
+  pointer-events: none;
+  transform: translateY(0.125rem);
+  --ionicon-stroke-width: 48px;
+}
+
+.openpage {
+  flex-grow: 1;
+  display: grid;
+  place-content: center;
+  width: 100%;
+}
+
+.uploadmodal {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 10px;
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  gap: 0.25rem;
+}
+.uploadtitle {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.uploadbutton {
+  background: var(--accent);
+  color: white;
+  margin-top: 0.5rem;
+  height: 2.75rem;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  border-radius: 0.75rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 10px;
+  cursor: pointer;
+}
+
+.uploadmodal > select {
+  background: white;
+  border: 2px solid var(--accent);
+  color: black;
+  margin-top: 0.5rem;
+  height: 2.75rem;
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.uploadmodal > select:focus {
+  outline: none;
+}
+
+
+
+
+
+.detailpage {
+  flex-grow: 1;
+  display: grid;
+  width: 100%;
+  padding: 1.5rem 1rem 1rem 1rem;
+  gap: 0 1rem;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 3.5rem 1fr;
+}
+.detailpage > .back {
+  margin: 0.5rem 0.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-content: center;
+  background: white;
+  color: var(--accent);
+  font-size: 1.25rem;
+  border-radius: 0.75rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px;
+}
+.detailpage > .experiencetitle {
+  margin: 0.5rem;
+  padding-left: 0;
+  height: 2.5rem;
+  background: white;
+  display: flex;
+  align-items: end;
+  font-size: 1.25rem;
+}
+.detailpage > .info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+  width: 20rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 10px;
+}
+.detailpage > .info > .image {
+  position: relative;
+  display: grid;
+  width: 7rem;
+  height: 7rem;
+  margin-top: -4rem;
+  border-radius: 1rem;
+  background: white;
+}
+.detailpage > .info > .image:after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 10px;
+  z-index: -1;
+}
+
+.detailpage > .info > .image > * {
+  position: absolute;
+  inset: 0.5rem;
+  width: calc(100% - 1rem);
+  height: calc(100% - 1rem);
+  background: var(--lighter-accent);
+  display: grid;
+  place-content: center;
+  color: var(--light-accent);
+  font-size: 3rem;
+  border-radius: 0.5rem;
+}
+.detailpage > .info > .image > img {
+  z-index: 2;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px;
+}
+.detailpage > .info > .name {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+}
+.detailpage > .info > .role {
+  margin-top: -0.25rem;
+  color: #5e5e5e;
+}
+.detailpage > .info > .divider {
+  margin-top: 1rem;
+}
+.detailpage > .info > .competence {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 2rem;
+  background: var(--lighter-accent);
+  border-radius: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.detailpage > .info > .competence > .supervision, .detailpage > .info > .competence > .remove {
+  display: grid;
+  place-content: center;
+  height: 2rem;
+  width: 2rem;
+  font-size: 1.25rem;
+  color: var(--accent);
+  cursor: pointer;
+  user-select: none;
+  opacity: 0;
+}
+.detailpage > .info > .competence:hover > .supervision, .detailpage > .info > .competence:hover > .remove {
+  opacity: 1;
+}
+
+.detailpage > .info > .addcompetence {
+  all: unset;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 2rem;
+  color: var(--accent);
+  cursor: pointer;
+  user-select: none;
+  margin-top: 0.125rem;
+  margin-bottom: -0.25rem;
+}
+
+.detailpage > .info > .compvalue {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 2rem;
+  background: var(--lighter-accent);
+  border-radius: 0.5rem;
+  margin-top: 0.25rem;
+  padding: 0 0.5rem;
+}
+
+.detailpage > .experience {
+  flex-grow: 1;
+  flex-shrink: 1;
+  position: relative;
+  display: flex;
+  gap: 1px;
+  min-height: 100%;
+  border-radius: 1rem;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 10px;
+  overflow: hidden;
+}
+.detailpage > .experience > .labels {
+  width: max-content;
+  min-width: 10rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: #e4e4e4;
+  z-index: 2;
+}
+.detailpage > .experience > .labels > div {
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  padding-left: 0.5rem;
+  background: white;
+}
+.detailpage > .experience > .labels > .scrollfiller {
+  height: auto;
+  flex-grow: 1;
+}
+.detailpage > .experience > .grid {
+  flex-shrink: 1;
+  display: flex;
+  overflow-x: scroll;
+  gap: 1px;
+  background: #e4e4e4;
+}
+.detailpage > .experience > .grid > .gridcolumn {
+  width: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.detailpage > .experience > .grid > .gridcolumn > * {
+  all: unset;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  width: 100%;
+  height: 2rem;
+  background: white;
+}
+
+.detailpage > .experience > .graph {
+  position: relative;
+  flex-grow: 1;
+  height: 100%;
+}
+
+.detailpage > .experience > .graph > .graphsvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}

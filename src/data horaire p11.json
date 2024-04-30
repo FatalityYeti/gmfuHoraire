@@ -1,0 +1,200 @@
+{"data": {
+  "person": "",
+  "period": {
+    "number": 11,
+    "startingDay": 19905
+  },
+
+  "clinique": {
+    "inputs": {
+      "ouverture": [],
+      "srv": [],
+      "availableOffices": [],
+      "dispoR1": [],
+      "dispoR2": [],
+      "dispoExt": []
+    }
+  },
+
+  "roles": {
+    "med": {"name":"Médecin"},
+    "res": {"name":"Résident"},
+    "ext": {"name":"Externe"},
+    "ips": {"name":"Infirmière praticienne spécialisée"},
+    "sips": {"name":"Stagiaire IPS"}
+  },
+  "activities": {
+    "dispo": {
+      "name": "Disponible",
+      "listname": "Disponible",
+      "cellname": "<ion-icon name='checkmark-circle'></ion-icon>"
+    },
+    "indisponible": {
+      "name": "Indisponible / autre activité",
+      "listname": "Indisponible / autre activité",
+      "cellname": "-"
+    },
+    "BUR": {
+      "name": "Bureau",
+      "type": "bureau",
+      "special": true,
+      "supervision": true
+    },
+    "SRV": {
+      "name": "Sans rendez-vous",
+      "type": "srv",
+      "special": true,
+      "supervision": true
+    },
+    "VAD": {
+      "name": "Visites à domicile",
+      "type": "clinique",
+      "special": true,
+      "supervision": true
+    },
+    "OBS": {
+      "name": "Suivi de grossesse",
+      "type": "clinique",
+      "special": true,
+      "infirmiere": true,
+      "supervision": true
+    },
+    "PED": {
+      "name": "Suivi pédiatrique",
+      "type": "clinique",
+      "special": true,
+      "infirmiere": true,
+      "supervision": true
+    },
+    "CHX": {
+      "name": "Chirurgies mineures",
+      "type": "clinique",
+      "special": true,
+      "infirmiere": true,
+      "supervision": true
+    },
+    "CHRN": {
+      "name": "Douleur chronique",
+      "type": "clinique",
+      "special": true,
+      "infirmiere": true,
+      "supervision": true
+    },
+    "LOCO": {
+      "name": "Locomoteur",
+      "type": "clinique",
+      "special": true,
+      "infirmiere": true,
+      "supervision": true
+    },
+    "JEUN": {
+      "name": "Clinique jeunesse",
+      "type": "clinique",
+      "special": true,
+      "infirmiere": true,
+      "supervision": true
+    },
+    "ADM": {
+      "name": "Clinico-administratif",
+      "type": "bloc",
+      "med": true
+    },
+    "TEL": {
+      "name": "Télétravail",
+      "type": "bloc",
+      "med": true
+    },
+    "HOS": {
+      "name": "Hospitalisation",
+      "type": "bloc",
+      "special": true,
+      "med": true,
+      "res": true
+    },
+    "URG": {
+      "name": "Urgence",
+      "type": "bloc",
+      "special": true,
+      "med": true,
+      "res": true
+    }
+  },
+  "people": {
+    "SBoyer": {
+      "name": "Dr. Suzanne Boyer",
+      "role": "med",
+      "competences": {"BUR":true, "SRV":true, "VAD":true}
+    },
+    "VAudetSimard": {
+      "name": "Dr. Véronique Audet-Simard",
+      "role": "med",
+      "competences": {"BUR":true, "SRV":true, "HOS":true}
+    },
+    "EOCarroll": {
+      "name": "Dr. Élise O'Carroll",
+      "role": "med",
+      "competences": {"BUR":true, "SRV":true, "OBS":true}
+    },
+    "NRLlanwarne": {
+      "name": "Dr. Nadia Rebecca Llanwarne",
+      "role": "med",
+      "competences": {"BUR":true, "SRV":true}
+    },
+    "JOmer": {
+      "name": "Dr. Jane Omer",
+      "role": "med",
+      "competences": {"BUR":true, "SRV":true, "PED":true}
+    },
+    "MKaci": {
+      "name": "Dr. Melyssa Kaci",
+      "role": "med",
+      "competences": {"BUR":true, "SRV":true}
+    },
+    "MFBeland": {
+      "name": "Dr. Marie-France Béland",
+      "role": "med",
+      "competences": {"BUR":true, "SRV":true}
+    },
+    "ONikitin": {
+      "name": "Dr. Oleg Nikitin",
+      "role": "med",
+      "competences": {"BUR":false, "SRV":false, "CHX":true}
+    },
+    "laurence": {
+      "name": "Dr. Laurence",
+      "role": "med",
+      "competences": {"BUR":true, "SRV":true, "OBS":true}
+    },
+    "JEBouchard": {
+      "name": "Dr. Jean-Emmanuel Bouchard",
+      "role": "med",
+      "competences": {"BUR":true, "SRV":true, "URG":true}
+    },
+    "MTadros": {
+      "name": "Dr. Maryse Tadros",
+      "role": "med",
+      "competences": {"BUR":true, "SRV":true}
+    },
+    "MPChabot": {
+      "name": "Dr. Marie-Pierre Chabot",
+      "role": "med",
+      "competences": {"BUR":true, "SRV":true, "URG":true}
+    },
+    "VLamarre": {
+      "name": "Dr. Vincent Lamarre",
+      "role": "med",
+      "competences": {"BUR":true, "SRV":true, "HOS":true}
+    },
+
+    "AABilodeau": {
+      "name": "IPS Audrey-Anne Bilodeau",
+      "role": "ips",
+      "competences": {"BUR":true, "SRV":true}
+    },
+    "PPenrroz": {
+      "name": "IPS Pénélope Penrroz",
+      "role": "ips",
+      "competences": {"BUR":true, "SRV":true}
+    }
+  }
+}}

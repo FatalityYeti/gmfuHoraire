@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disponibilités GMF-U</title>
+  <link rel="icon" type="image/png" href="/images/Favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="notificationSystem_v1-0/notificationSystem.css">
+</head>
+<body>
+  <script src="/vanillaJSX.js"></script>
+  <script src="/yetiLib.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  
+  <script defer src="notificationSystem_v1-0/notificationSystem.js"></script>
+  
+  <script defer type="text/babel" src="script.js"></script>
+
+  <script defer type="text/babel" src="pageDispo.js"></script>
+  <script defer type="text/babel" src="pageOpenFile.js"></script>
+  <script defer type="text/babel" src="pagePersonSelect.js"></script>
+  <script defer type="text/babel" src="pagePersonDetailed.js"></script>
+
+  <script defer type="text/babel">
+    const softwareVersion="client";
+    let activePage = "openFile";
+    renderPage();
+  </script>
+
+  <header>
+    <img class="logo" src="/images/Logo-couleur.png" alt="logo">
+  </header>
+
+  <div id="pagecontent">
+    <div class="openpage">Chargement...</div>
+  </div>
+  
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: "Inter";
+  --noti-width: 432px;
+
+  --noti-border-width: 1px;
+  --noti-border-radius: 16px; /* outer */
+  --noti-shadow: none;
+}
+
+.noti.normal {
+  --noti-accent: #0E5833;
+  --noti-border-color: #e4e4e4;
+  --noti-background: white;
+
+  --noti-title-color: black;
+  --noti-description-color: #5e5e5e;
+}
+.noti.warning {
+  --noti-accent: #E6AD18;
+  --noti-border-color: #F2E8B6;
+  --noti-background: #F5F0D9;
+
+  --noti-title-color: black;
+  --noti-description-color: #5e5e5e;
+}
+.noti.error {
+  --noti-accent: #C71D12;
+  --noti-border-color: #E0BAB8;
+  --noti-background: #F0D9D7;
+
+  --noti-title-color: black;
+  --noti-description-color: #5e5e5e;
+}
+
+.noti-wrapper {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  
+  width: var(--noti-width);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  margin: 0.5rem;
+  z-index: 100;
+  isolation: isolate;
+  user-select: none;
+}
+
+.noti {
+  position: relative;
+  height: 0;
+  transition: height 300ms ease;
+  flex-shrink: 0;
+  opacity: 1;
+}
+.noti.out {animation: notiOut 500ms ease forwards}
+@keyframes notiOut {
+  to {height: 0;}
+}
+
+.noti-card {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+  width: var(--noti-width);
+  background: var(--noti-border-color);
+  border-radius: var(--noti-border-radius);
+  overflow: hidden;
+  animation: notiCardIn 500ms ease;
+  box-shadow: var(--noti-shadow);
+}
+@keyframes notiCardIn {
+  from {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+}
+.noti.out .noti-card {animation: notiCardOut 500ms ease forwards}
+@keyframes notiCardOut {
+  to {
+    opacity: 0;
+    transform: scale(0.5)
+  }
+}
+.noti-card:before {
+  position: absolute;
+  content: "";
+  inset: var(--noti-border-width);
+  border-radius: calc(var(--noti-border-radius) - var(--noti-border-width));
+  background: var(--noti-background);
+  z-index: 2
+}
+.noti-card:after {
+  position: absolute;
+  content: "";
+  width: 0.25rem;
+  inset: 0.65rem auto 0.65rem 0.5rem;
+  border-radius: 0.125rem;
+  background: var(--noti-accent);
+  z-index: 4;
+}
+
+.noti-title {
+  color: var(--noti-title-color);
+  padding: 0.65rem 0.5rem 0.4rem 1.25rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  z-index: 5;
+}
+.noti-description {
+  color: var(--noti-description-color);
+  padding: 0 0.5rem 0.85rem 1.25rem;
+  z-index: 5;
+}

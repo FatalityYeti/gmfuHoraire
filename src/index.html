@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horaire GMF-U</title>
+  <link rel="icon" type="image/png" href="/images/Favicon.png"> 
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pageHoraire.css">
+  <link rel="stylesheet" href="notificationSystem_v1-0/notificationSystem.css">
+</head>
+<body>
+  <script>
+    function repeat(node, amount) {[...Array(amount - 1)].forEach(_ => node.parentNode.insertBefore(node.cloneNode(true), node));}    
+  </script>
+  
+  <script src="/vanillaJSX.js"></script>
+  <script src="/yetiLib.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script defer type="text/babel" src="graphRenderer.js"></script>
+  
+  <script defer src="notificationSystem_v1-0/notificationSystem.js"></script>
+
+  <script defer type="text/babel" src="script.js"></script>
+
+  <script defer type="text/babel" src="pageDispo.js"></script>
+  <script defer type="text/babel" src="pageOpenFile.js"></script>
+  <script defer type="text/babel" src="pagePersonSelect.js"></script>
+  <script defer type="text/babel" src="pagePersonDetailed.js"></script>
+  <script defer type="text/babel" src="pageHoraire.js"></script>
+  <script defer type="text/babel" src="pageCalculating.js"></script>
+  <script defer type="text/babel" src="theActualThing.js"></script>
+
+  <script defer type="text/babel">
+    const softwareVersion="dashboard";
+    let activePage = "openFile";
+    renderPage();
+  </script>
+  
+  <div class="noti-wrapper"></div>
+
+  <header>
+    <img class="logo" src="/images/Logo-couleur.png" alt="logo">
+    
+    <nav>
+      <div class="navtab" onclick="selectTab(this)" data-tab="med">Médecins</div>
+      <div class="navtab" onclick="selectTab(this)" data-tab="res">Résidents</div>
+      <div class="navtab" onclick="selectTab(this)" data-tab="ext">Externes</div>
+      <div class="navtab" onclick="selectTab(this)" data-tab="ips">IPS</div>
+      <div class="navtab" onclick="selectTab(this)" data-tab="sips">Stag. IPS</div>
+      <div class="navtab" onclick="selectTab(this)" data-tab="clinique">Clinique</div>
+      <div class="navtab" style="display: none;" onclick="selectTab(this)" data-tab="horaire">Horaire</div>
+    </nav>
+    <div>
+      <div class="navbutton generateschedule" onclick="genSchedule()">Générer l'horaire</div>
+      <div class="navbutton backtoinputs" style="display: none;" onclick="backToInputs()">Retourner aux Disponibilités</div>
+      <div class="navsave" onclick="downloadData()">
+        <ion-icon name="save"></ion-icon>
+      </div>
+    </div>
+  </header>
+
+  <div id="pagecontent">
+    <div id="pagecontent">
+      <div class="openpage">Chargement...</div>
+    </div>
+    <!--
+    <div class="detailpage">
+      <div class="back"><ion-icon name="arrow-back-outline"></ion-icon></div>
+      <div class="experiencetitle">Experience</div>
+      <div class="info">
+        <div class="image">
+          <img src="/images/SBoyerPFP.png" alt="">
+        </div>
+        <div class="name">Dr. Suzanne Boyer</div>
+        <div class="role">Medecin</div>
+        <div class="divider">Competences / specialites</div>
+        <div class="competence">
+          <div class="supervision"><ion-icon name="school-outline"></ion-icon></ion-icon></div>
+          Bureau - sup.
+          <div class="remove"><ion-icon name="close"></ion-icon></div>
+        </div>
+        <div class="competence">
+          <div class="supervision"><ion-icon name="school-outline"></ion-icon></ion-icon></div>
+          Sans rendez-vous - sup.
+          <div class="remove"><ion-icon name="close"></ion-icon></div>
+        </div>
+        <div class="competence">
+          <div class="supervision"><ion-icon name="school-outline"></ion-icon></ion-icon></div>
+          Visites a domicile - sup.
+          <div class="remove"><ion-icon name="close"></ion-icon></div>
+        </div>
+        <div class="addcompetence">Ajouter</div>
+      </div>
+      <div class="experience">
+        <div class="labels">
+          <div>Periode</div>
+          <div class="experiencelabel">Bureau</div>
+          <script>repeat(document.querySelector(".experiencelabel"), 15)</script>
+          <div class="scrollfiller"></div>
+        </div>
+        <div class="grid">
+          <div class="gridcolumn">
+            <div>0</div>
+            <input class="gridval" type="number" value="0">
+          </div>
+          <script>repeat(document.querySelector(".gridval"), 30)</script>
+          <script>repeat(document.querySelector(".gridcolumn"), 50)</script>
+        </div>
+      </div>
+    </div>
+    -->
+    <!--
+    <div class="personsection">
+      <div class="info">
+        <div class="name">Suzanne</div>
+        <div class="actions">
+          <div class="button">Voir l'info détaillée</div>
+        </div>
+      </div>
+      <div class="grids">
+        <div class="periodcount">
+          <div>Périodes:</div>
+          <input type="number" min="0">
+        </div>
+        <div class="periodcount">
+          <div>Périodes:</div>
+          <input type="number" min="0">
+        </div>
+        <div class="periodcount">
+          <div>Périodes:</div>
+          <input type="number" min="0">
+        </div>
+        <div class="periodcount">
+          <div>Périodes:</div>
+          <input type="number" min="0">
+        </div>
+      </div>
+    </div>
+  </div>
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+
+
+
